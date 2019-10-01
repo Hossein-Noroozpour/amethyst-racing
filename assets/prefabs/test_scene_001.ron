@@ -14,7 +14,7 @@ Prefab (
         ),
         (
             data: (
-                gltf: File("meshes/test_scene_001.glb", ()),
+                gltf: File("scenes/test_scene_001.glb", ()),
                 tag: (),
             ),
         ),

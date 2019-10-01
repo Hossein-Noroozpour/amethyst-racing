@@ -11,6 +11,7 @@ use amethyst::{
     core::transform::{Transform, TransformBundle},
     derive::PrefabData,
     ecs::{Entity, ReadStorage, Write, WriteStorage},
+    gltf::{GltfSceneAsset, GltfSceneFormat, GltfSceneLoaderSystemDesc},
     input::{is_close_requested, is_key_down, StringBindings, VirtualKeyCode},
     prelude::*,
     renderer::{
@@ -26,7 +27,6 @@ use amethyst::{
         tag::{Tag, TagFinder},
     },
     Error,
-    gltf::{GltfSceneAsset, GltfSceneFormat, GltfSceneLoaderSystemDesc}
 };
 
 use serde::{Deserialize, Serialize};
@@ -68,7 +68,7 @@ impl SimpleState for Example {
         world.exec(
             |(loader, mut scene): (PrefabLoader<'_, ScenePrefabData>, Write<'_, Scene>)| {
                 scene.handle = Some(loader.load(
-                    "prefab/test_scene_001.ron",
+                    "prefabs/test_scene_001.ron",
                     RonFormat,
                     self.progress.as_mut().unwrap(),
                 ));

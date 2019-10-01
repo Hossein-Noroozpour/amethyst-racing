@@ -1,0 +1,12 @@
+[package]
+name = "test001"
+version = "0.1.0"
+authors = ["Hossein Noroozpour <hossein.noroozpour@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+serde = "*"
+
+[dependencies.amethyst]
+version = "*"
+features = ["nightly", "vulkan", "gltf", "animation", "audio"]
